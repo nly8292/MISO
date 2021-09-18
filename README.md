@@ -1,6 +1,6 @@
 
 # Mixed Sample Synthesis
-This is the official implementation of the multi-input single-output models in the paper "<a href="https://doi.org/10.1016/j.jnucmat.2020.152082">Determining uranium ore concentrates and their calcination products via image classification of multiple magnifications</a>"
+This is the official implementation of the multi-input single-output models proposed in "<a href="https://doi.org/10.1016/j.jnucmat.2020.152082">Determining uranium ore concentrates and their calcination products via image classification of multiple magnifications</a>"
 
 ## Setup
 
@@ -18,9 +18,9 @@ pip3 install -r requirements.txt
 Execute the script `run_script.sh` to train or test pretrained MISO models. Furthermore, the following params inside `run_script.sh` can be modified to obtain desired behavior.
 - `gpu_id` - GPU ID
 - `isTesting` - Switch to testing mode
-- `create_trainval_file` - Initiate the data file creation process
+- `create_trainval_file` - Initiate data file creation process
 - `trainval_file_corename` - Core name of train/val text file to be created
-- `datafile_dir` - Directory of the datafile to be loaded
+- `datafile_dir` - Directory of datafile to be loaded
 - `datafile` - Core name of data file to be loaded
 - `num_epochs` - Number of training epochs
 - `ep_init` - Number of epochs for the transfer learning stage
@@ -35,7 +35,7 @@ Execute the script `run_script.sh` to train or test pretrained MISO models. Furt
     
 
 ## Citation
-If you use this code for your research, please cite our paper:
+If you find this code useful for your research, please cite our paper:
 
 ```
 @article{MISO, 
