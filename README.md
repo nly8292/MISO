@@ -27,8 +27,8 @@ Execute the script `run_script.sh` to train or test pretrained MISO models. Furt
 - `bz` - Batch size
 - `lr` - Learning rate
 - `momentum` - Momentum for SGD optimizer    
-- `type_network` - Type of MISO model `shared (Default) | unshared` 
-- `resnet` - Type of Resnet model `resnet18 | resnet34 (Default) | resnet50`
+- `type_network` - Type of MISO model [`shared (Default) | unshared` ]
+- `resnet` - Type of Resnet model [`resnet18 | resnet34 (Default) | resnet50`]
 - `mags` - Magnifications used for classification
 - `fold_num` - Fold-th to be used for training in the 5-fold cross validation    
 - `saved_model_dir` - Directory for saving the model's weights
