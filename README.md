@@ -31,7 +31,7 @@ Execute the script `run_script.sh` to train or test pretrained MISO models. Furt
 - `resnet` - Type of Resnet model [`resnet18 | resnet34 (Default) | resnet50`]
 - `mags` - Magnifications used for classification
 - `fold_num` - Fold-th to be used for training in the 5-fold cross validation    
-- `saved_model_dir` - Directory for saving the model's weights
+- `saved_model_dir` - Directory for storing the model's weights
     
 
 ## Citation
