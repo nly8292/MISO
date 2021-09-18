@@ -1,6 +1,6 @@
 
 # Mixed Sample Synthesis
-This is the official implementation of the multi-input single-output models proposed in "<a href="https://doi.org/10.1016/j.jnucmat.2020.152082">Determining uranium ore concentrates and their calcination products via image classification of multiple magnifications</a>"
+This is the official implementation of the multi-input single-output (MISO) models proposed in "<a href="https://doi.org/10.1016/j.jnucmat.2020.152082">Determining uranium ore concentrates and their calcination products via image classification of multiple magnifications</a>"
 
 ## Setup
 
