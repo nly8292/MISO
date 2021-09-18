@@ -1,6 +1,6 @@
 
 # Mixed Sample Synthesis
-This is the official implementation of the multi-input single-output models in the paper <a href="https://doi.org/10.1016/j.jnucmat.2020.152082">Determining uranium ore concentrates and their calcination products via image classification of multiple magnifications</a>
+This is the official implementation of the multi-input single-output models in the paper "<a href="https://doi.org/10.1016/j.jnucmat.2020.152082">Determining uranium ore concentrates and their calcination products via image classification of multiple magnifications</a>"
 
 ## Setup
 
@@ -35,7 +35,7 @@ Execute the script `run_script.sh` to train or test pretrained MISO models. Furt
     
 
 ## Citation
-If you use this code for your research, please cite our paper <a href="https://doi.org/10.1016/j.jnucmat.2020.152082">Determining uranium ore concentrates and their calcination products via image classification of multiple magnifications</a>:
+If you use this code for your research, please cite our paper:
 
 ```
 @article{MISO, 
