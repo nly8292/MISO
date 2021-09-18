@@ -14,7 +14,7 @@ pip3 install -r requirements.txt
 ```
 
 
-## Synthesize Mixed Samples
+## Traing/Testing
 Execute the script `run_script.sh` to train or test pretrained MISO models. Furthermore, the following params inside `run_script.sh` can be modified to obtain desired behavior.
 - `gpu_id` - GPU ID
 - `isTesting` - Switch to testing mode
