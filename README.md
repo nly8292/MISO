@@ -15,7 +15,7 @@ pip3 install -r requirements.txt
 
 
 ## Traing/Testing
-Execute the script `run_script.sh` to train or test pretrained MISO models. Furthermore, the following params inside `run_script.sh` can be modified to obtain desired behavior.
+Execute the script `run_script.sh` to train or test pretrained MISO models. Furthermore, the following params inside `run_script.sh` can be modified to obtain other desired behaviors.
 - `gpu_id` - GPU ID
 - `isTesting` - Switch to testing mode
 - `create_trainval_file` - Initiate data file creation process
