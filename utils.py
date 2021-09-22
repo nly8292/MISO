@@ -117,7 +117,7 @@ def create_trainval_file(rdir, fold_num, mags, trainval_file_dir, trainval_file_
 
 def write_to_files(files, filename):
     '''
-    parse to text file
+    Parse to text file
     '''
 
     f = open(filename,'w')
