@@ -1,7 +1,7 @@
 #!/bin/bash
 
 python main.py --gpu_id=0 \
---dataset_dir='/usr/sci/projs/DeepLearning/Cuong_Dataset/Nuclear_Forensics_Data/Synthetic_Routes_Magnifications/Magnification_v2' \
+--dataset_dir='' \
 --datafile=all \
 --num_epochs=45 --ep_init=15 \
 --bz=16 \
