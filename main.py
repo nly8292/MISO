@@ -1,13 +1,4 @@
-#!/home/sci/nly8292/document/pytorch_env_dgx/bin/python
-
-#SBATCH --time=48:00:00
-#SBATCH --nodes=1
-#SBATCH -o slurm-%j.out-%N
-#SBATCH -e slurm-%j.err-%N
-#SBATCH  --gres=gpu:1
-
 from __future__ import print_function, division, absolute_import, unicode_literals
-
 import numpy as np
 from PIL import Image as PILimage
 import time
@@ -33,7 +24,7 @@ def Main():
     parser.add_argument('--gpu_id', type=int, default = 0, help = 'GPU#')    
     parser.add_argument('--dataset_dir', type=str, default = '.', help = 'Directory of dataset')      
     parser.add_argument('--datafile_dir', type=str, default = '.', help = 'Directory of datafile')    
-    parser.add_argument('--create_trainval_file', action="store_true", help='Create train/val text files')   
+    parser.add_argument('--create_trainval_file', action = "store_true", help = 'Create train/val text files')   
     parser.add_argument('--datafile', type=str, default = '', help = 'Core name of data file to be created/loaded')
     parser.add_argument('--num_epochs', type=int, default = 10, help = 'Number of epochs')
     parser.add_argument('--ep_init', type=int, default = 15, help = 'Number of epochs for initial training')
@@ -44,8 +35,8 @@ def Main():
     parser.add_argument('--resnet', type=str, default = 'resnet34', help = 'Type of resnet')
     parser.add_argument('--fold_num', type=int, default = 0, help = 'Fold number')
     parser.add_argument('--saved_model_dir', type=str, default = './saved_models', help = 'Directory of saved models')    
-    parser.add_argument('--mags', type=str, default = '10000x,25000x,50000x,100000x', help='Magnifications used for classification')    
-    parser.add_argument('--isTesting', action="store_true", help='Specify the process')      
+    parser.add_argument('--mags', type=str, default = '10000x,25000x,50000x,100000x', help='Magnifications for use in classification')    
+    parser.add_argument('--isTesting', action = "store_true", help = 'Switch to testing mode')      
 
     params, unparsed = parser.parse_known_args()
 
