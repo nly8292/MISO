@@ -1,6 +1,6 @@
 
 # Multi-Input Single-Output
-This is the official implementation of the multi-input single-output (MISO) models proposed in "<a href="https://doi.org/10.1016/j.jnucmat.2020.152082">Determining uranium ore concentrates and their calcination products via image classification of multiple magnifications</a>"
+This is the official implementation of the multi-input single-output (MISO) models proposed in the paper "<a href="https://doi.org/10.1016/j.jnucmat.2020.152082">Determining uranium ore concentrates and their calcination products via image classification of multiple magnifications</a>"
 
 ## Setup
 
@@ -26,7 +26,7 @@ Execute the script `run_script.sh` to train or test pretrained MISO models. Furt
 - `momentum` - Momentum for SGD optimizer    
 - `type_network` - Type of MISO model [`shared (Default) | unshared` ]
 - `resnet` - Type of Resnet model [`resnet18 | resnet34 (Default) | resnet50`]
-- `mags` - Magnifications used for classification
+- `mags` - Magnifications for use in classification
 - `fold_num` - Fold-th to be used for training in the 5-fold cross validation    
 - `saved_model_dir` - Directory for storing the model's weights
     
