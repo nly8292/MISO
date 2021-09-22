@@ -1,5 +1,5 @@
 
-# Mixed Sample Synthesis
+# Multi-Input Single-Output
 This is the official implementation of the multi-input single-output (MISO) models proposed in "<a href="https://doi.org/10.1016/j.jnucmat.2020.152082">Determining uranium ore concentrates and their calcination products via image classification of multiple magnifications</a>"
 
 ## Setup
@@ -8,10 +8,7 @@ This is the official implementation of the multi-input single-output (MISO) mode
 - Linux
 - NVIDIA GPU + CUDA CuDNN (CPU mode may work without any modification, but untested)
 - Python 3.6
-- Install necessary libraries with pip
-```
-pip3 install -r requirements.txt
-```
+- Install required libraries with `pip3 install -r requirements.txt`
 
 
 ## Traing/Testing
@@ -23,7 +20,7 @@ Execute the script `run_script.sh` to train or test pretrained MISO models. Furt
 - `datafile_dir` - Directory of datafile to be loaded
 - `datafile` - Core name of data file to be loaded
 - `num_epochs` - Number of training epochs
-- `ep_init` - Number of epochs for the transfer learning stage
+- `ep_init` - Number of epochs for training only classifier layers
 - `bz` - Batch size
 - `lr` - Learning rate
 - `momentum` - Momentum for SGD optimizer    

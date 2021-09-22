@@ -45,7 +45,6 @@ def plot_confusion_matrix(conf_matrix, classes, saved_exp_name,
         print("Normalized confusion matrix")
     else:
         print('Confusion matrix, without normalization')
-    
 
     plt.imshow(conf_matrix, interpolation='nearest', cmap=cmap)
     plt.title(title)
@@ -53,6 +52,8 @@ def plot_confusion_matrix(conf_matrix, classes, saved_exp_name,
     tick_marks = np.arange(len(classes))
     plt.xticks(tick_marks, classes, rotation=45)
     plt.yticks(tick_marks, classes)
+    plt.xlim(-0.5,len(classes)-0.5)
+    plt.ylim(len(classes)-0.5,-0.5)
 
     fmt = '.2f' if normalize else 'd'
     thresh = conf_matrix.max() / 2.

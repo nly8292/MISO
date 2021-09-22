@@ -9,7 +9,6 @@
 from __future__ import print_function, division, absolute_import, unicode_literals
 
 import numpy as np
-from skimage import io
 from PIL import Image as PILimage
 import time
 import os
@@ -31,9 +30,10 @@ from utils import *
 def Main():
     
     parser = argparse.ArgumentParser()  
-    parser.add_argument('--gpu_id', type=int, default = 0, help = 'GPU#')
-    parser.add_argument('--isTesting', action="store_true", help='Specify the process')      
-    parser.add_argument('--datafile_dir', type=str, default = '.', help = 'Directory of datafile')      
+    parser.add_argument('--gpu_id', type=int, default = 0, help = 'GPU#')    
+    parser.add_argument('--dataset_dir', type=str, default = '.', help = 'Directory of dataset')      
+    parser.add_argument('--datafile_dir', type=str, default = '.', help = 'Directory of datafile')    
+    parser.add_argument('--create_trainval_file', action="store_true", help='Create train/val text files')   
     parser.add_argument('--datafile', type=str, default = '', help = 'Core name of data file to be created/loaded')
     parser.add_argument('--num_epochs', type=int, default = 10, help = 'Number of epochs')
     parser.add_argument('--ep_init', type=int, default = 15, help = 'Number of epochs for initial training')
@@ -43,10 +43,9 @@ def Main():
     parser.add_argument('--type_network', type=str, default = 'shared', help = 'Type of network')
     parser.add_argument('--resnet', type=str, default = 'resnet34', help = 'Type of resnet')
     parser.add_argument('--fold_num', type=int, default = 0, help = 'Fold number')
-    parser.add_argument('--saved_model_dir', type=str, default = './saved_models', help = 'Directory of saved models')
-    parser.add_argument('--create_trainval_file', action="store_true", help='Create train/val text files') 
-    parser.add_argument('--mags', type=str, default = '10000x,25000x,50000x,100000x', help='Magnifications used for classification')
-    parser.add_argument('--trainval_file_corename', type=str, default = '', help='Core name of train/val text file to be created')
+    parser.add_argument('--saved_model_dir', type=str, default = './saved_models', help = 'Directory of saved models')    
+    parser.add_argument('--mags', type=str, default = '10000x,25000x,50000x,100000x', help='Magnifications used for classification')    
+    parser.add_argument('--isTesting', action="store_true", help='Specify the process')      
 
     params, unparsed = parser.parse_known_args()
 
@@ -54,7 +53,7 @@ def Main():
 
     params.mags = [x for x in params.mags.split(',')]
     if params.create_trainval_file:
-        create_trainval_file('/usr/sci/projs/DeepLearning/Cuong_Dataset/Nuclear_Forensics_Data/Synthetic_Routes_Magnifications/Magnification_v2',\
+        create_trainval_file(params.dataset_dir,\
          params.fold_num, params.mags, params.datafile_dir, params.datafile) 
 
     core_datafile_name = '%s_fold%d' %(params.datafile, params.fold_num)    
@@ -75,7 +74,7 @@ def Main():
         dataloaders_dict[x] = torch.utils.data.DataLoader(curr_dataset, batch_size=params.bz, shuffle=x=='train', num_workers=4)
 
         time_elapsed = time.time() - since
-        print('--- Finish loading ' + x + ' data in {:.0f}m {:.0f}s---'.format(time_elapsed // 60, time_elapsed % 60))
+        print('--- Finished loading ' + x + ' data in {:.0f}m {:.0f}s---'.format(time_elapsed // 60, time_elapsed % 60))
         
     saved_file_name = '%s_%s_%s' %(core_datafile_name,params.type_network,params.resnet)
     
