@@ -38,7 +38,7 @@ class SynRoutes(Dataset):
 
     def get_classes(self):
         '''
-        Get classes' name
+        Get name of each class
         '''
 
         uni_ind = set(self.labels)
@@ -46,7 +46,7 @@ class SynRoutes(Dataset):
 
     def get_mags(self):
         '''
-        Get all the magnifications used
+        Get all the magnifications available in the dataset
         '''
 
         val = self.img_files['mag0'][0].split('/')[-2]
@@ -107,6 +107,6 @@ class SynRoutes(Dataset):
         else:
             return transforms.Compose([\
                     transforms.CenterCrop(input_size),\
-                    transforms.ToTensor(),#]#,\
+                    transforms.ToTensor(),\
                     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
         
