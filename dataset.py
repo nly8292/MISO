@@ -57,7 +57,7 @@ class SynRoutes(Dataset):
 
     def _parse_text_file(self, datafile):
         '''
-        parse train/val text file into a dictionary input
+        Parse train/val text file into a dictionary input
         -> train/val text file template
             mag0/img0 mag1/img0 ... label
             mag0/img1 mag1/img1 ... label
